@@ -12,6 +12,26 @@ When GPS data becomes unavailable, the UAV uses these onboard sensors to infer i
 1. **GPS Loss Detection** – Lua script monitors GPS health using ArduPilot parameters (`gpsstatus`, `gpshdop`).  
 2. **Fallback Navigation** – On detecting GPS loss, the system switches to dead reckoning mode.  
 3. **Sensor Fusion** – Position and heading are estimated from IMU acceleration, barometric altitude, and magnetometer yaw.  
-4. **Return Command** – Estimated offset from home is used to compute vector heading and trigger RTL.  
+4. **Return Command** – Estimated offset from home is used to compute vector heading and trigger RTL.
+
+### Tech Stack
+- ArduPilot SITL (Software in the Loop)
+- Lua Scripting
+- MAVProxy
+- Python (for simulation control)
+- IMU, Barometer, Magnetometer
+
+### Code Snippet
+```lua
+-- Pseudo-section of Lua script
+if gps:status() < 3 then
+    local imu_data = ahrs:get_accel()
+    local heading = ahrs:get_yaw()
+    local alt = baro:get_pressure()
+    -- Estimate displacement using IMU integration
+    -- Calculate vector to home and trigger RTL
+    vehicle:set_mode(6) -- RTL mode
+end
+
 
 
