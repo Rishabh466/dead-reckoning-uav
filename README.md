@@ -33,5 +33,15 @@ if gps:status() < 3 then
     vehicle:set_mode(6) -- RTL mode
 end
 
+```mermaid
+flowchart TD
+    A[Start] --> B[Normal GPS Navigation]
+    B -->|GPS Lost| C[Trigger Lua Script]
+    C --> D[Read IMU, Barometer, Magnetometer]
+    D --> E[Estimate Position via Dead Reckoning]
+    E --> F[Compute Vector to Home]
+    F --> G[Command RTL Mode]
+    G --> H[Landing / Recovery]
+
 
 
