@@ -21,18 +21,6 @@ When GPS data becomes unavailable, the UAV uses these onboard sensors to infer i
 - Python (for simulation control)
 - IMU, Barometer, Magnetometer
 
-```mermaid
-flowchart TD
-    A[Start] --> B[Normal GPS Navigation]
-    B -->|GPS Lost| C[Trigger Lua Script]
-    C --> D[Read IMU, Barometer, Magnetometer]
-    D --> E[Estimate Position via Dead Reckoning]
-    E --> F[Compute Vector to Home]
-    F --> G[Command RTL Mode]
-    G --> H[Landing / Recovery]
-
-
-
 ### Code Snippet
 ```lua
 -- Pseudo-section of Lua script
