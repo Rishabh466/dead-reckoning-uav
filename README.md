@@ -104,4 +104,12 @@ This Lua-based system lays the groundwork for robust GPS-denied navigation in fu
 | **Programming Languages** | Lua |
 | **Operating System** | Ubuntu / Linux |
 
+---
+
+## Author
+**Rishabh Singh Rawat**  
+B.Tech Electronics Engineering (IoT)  
+JC Bose Institute of Technology, YMCA  
+Intern @ BotLab Dynamics | Ahuja Radios  
+
 
