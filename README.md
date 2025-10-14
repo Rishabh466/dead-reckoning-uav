@@ -5,7 +5,7 @@ In GPS-denied environments such as tunnels, dense urban areas, or under canopy c
 This project implements a **Lua-scripted dead reckoning system** within the **ArduPilot SITL simulation environment** to allow drones to return to their launch position without GPS.  
 
 The algorithm estimates position using onboard sensors—**IMU, barometer, and magnetometer**—and commands an RTL sequence based on relative displacement from the home point.  
-The system was developed and tested under simulated GPS-loss conditions using **MAVProxy** and **ArduPilot Copter** SITL.
+The system was developed and tested under simulated GPS-loss conditions using **MAVProxy** and **ArduPilot Copter** SITL and later on a real drone.
 
 ---
 
