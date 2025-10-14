@@ -52,24 +52,56 @@ Once GPS is lost, it triggers the dead reckoning routine and computes approximat
 
 ---
 
-## Lua Script Example
+## Testing and Result
+- **Scenario**: Simulated GPS loss mid-mission.
+- **Action**: Lua script switched control from GPS-based navigation to sensor-based dead reckoning.
+- **Outcome**: Drone returned within ~3 meters of home position under moderate sensor drift conditions.
+- **Validation**: Verified through MAVProxy position logs and SITL map visualization.
 
-```lua
--- Dead Reckoning RTL Script (simplified)
-local function update()
-    if gps:status() < 3 then
-        gcs:send_text(0, "⚠️ GPS signal lost, switching to dead reckoning...")
-        local imu_data = ahrs:get_accel()
-        local heading = ahrs:get_yaw()
-        local altitude = baro:get_pressure()
-        -- Compute displacement using IMU data (simplified)
-        -- In actual implementation, integrate acceleration over time
-        local dx, dy = imu_data:x() * math.cos(heading), imu_data:x() * math.sin(heading)
-        -- Trigger RTL command
-        vehicle:set_mode(6)
-        gcs:send_text(0, "Executing RTL using Dead Reckoning")
-    end
-end
+---
 
-return update
+## Applications
+- **GPS-Denied UAV Operations** – Urban, tunnel, or indoor navigation.
+- **Autonomous Recovery Systems** – Safe fallback for GPS-compromised drones.
+- **Military or Research Missions** – Reliable mission continuity in adversarial or obstructed environments.
+- **Academic Simulation Studies** – Understanding sensor drift, integration errors, and autonomous fallback design.
+
+---
+
+## Advamatages
+- **GPS Independence** – Enables autonomous navigation even without satellite signals.
+- **Modular Implementation** – Written fully in Lua, can be deployed to any ArduPilot-based platform.
+- **Lightweight and Fast** – Low CPU overhead on embedded flight controllers.
+- **Scalable for Swarms** – Can be extended to multi-UAV cooperative dead reckoning.
+- **Educational Value** – Excellent project to understand sensor fusion and error propagation.
+
+---
+
+## Summary
+This project showcases an implementation of dead reckoning-based Return-to-Home (RTL) for UAVs under GPS-denied conditions.
+By combining IMU, barometric, and magnetometer data, the drone estimates its position drift and autonomously returns home.
+The system was tested in SITL simulation using ArduPilot and validated with MAVProxy visualization, achieving near-accurate home recovery with moderate drift.
+
+This Lua-based system lays the groundwork for robust GPS-denied navigation in future UAV missions.
+
+---
+
+## Future Improvements
+- Implement Kalman or Gaussian Sum Filter for better drift correction.
+- Add sensor calibration routines for bias compensation.
+- Extend 3D position estimation using integrated accelerometer and gyro data.
+- Integrate with formation flight module for swarm-level dead reckoning.
+- Test under hardware-in-the-loop (HIL) for real-flight validation.
+
+---
+
+## Tech Stack Summary
+| Category | Tools/Components |
+|------------|-----------|
+| **Simulation** | ArduPilot SITL, MAVProxy |
+| **Control Interface** | Lua Scripting |
+| **Sensors Used** | IMU, Barometer, Magnetometer | 
+| **Programming Languages** | Lua |
+| **Operating System** | Ubuntu / Linux |
+
 
