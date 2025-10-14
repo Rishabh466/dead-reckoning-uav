@@ -22,7 +22,7 @@ This ensures safe and autonomous recovery even in the absence of satellite data.
 ---
 
 ## Working
-The project was developed entirely using ArduPilot’s **SITL (Software-In-The-Loop)** simulation and tested through **MAVProxy** console visualization.  
+The project was first developed entirely using ArduPilot’s **SITL (Software-In-The-Loop)** simulation and tested through **MAVProxy** console visualization.  
 A Lua script runs onboard (within ArduPilot) and continuously monitors GPS status.  
 Once GPS is lost, it triggers the dead reckoning routine and computes approximate distance and bearing to the home location.
 
