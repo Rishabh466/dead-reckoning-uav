@@ -60,6 +60,19 @@ Once GPS is lost, it triggers the dead reckoning routine and computes approximat
 
 ---
 
+## Project Demonstration
+
+[![Dead Reckoning Demo](https://img.youtube.com/vi/pdFYwzBmNsg/0.jpg)](https://youtu.be/pdFYwzBmNsg)
+
+> *Watch the UAV autonomously execute Return-to-Home under GPS-denied conditions using dead reckoning.*
+
+**Highlights:**
+- Simulated GPS loss during flight  
+- Lua-based fallback navigation switching  
+- Real-time estimation & RTL   
+
+---
+
 ## Applications
 - **GPS-Denied UAV Operations** – Urban, tunnel, or indoor navigation.
 - **Autonomous Recovery Systems** – Safe fallback for GPS-compromised drones.
