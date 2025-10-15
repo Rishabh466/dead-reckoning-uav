@@ -7,9 +7,7 @@
 ## System Architecture
 
 <p align="center">
-  <a href="dead-reckoning-flow.svg">
-    <img src="dead-reckoning-flow.svg" alt="System Flow Diagram"/>
-  </a>
+  <img src="dead-reckoning-flow.png" alt="System Flow Diagram" width="800"/>
 </p>
 
 ## Introduction
