@@ -4,6 +4,12 @@
 
 # Dead Reckoning Navigation (GPS-Denied Return-to-Home)
 
+## System Architecture
+
+<p align="center">
+  <img src="dead-reckoning-flow.png" alt="System Flow Diagram" width="800"/>
+</p>
+
 ## Introduction
 In GPS-denied environments such as tunnels, dense urban areas, or under canopy cover, UAVs can lose positional awareness, making it impossible to perform autonomous Return-to-Home (RTL) operations.  
 This project implements a **Lua-scripted dead reckoning system** within the **ArduPilot SITL simulation environment** to allow drones to return to their launch position without GPS.  
