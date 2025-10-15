@@ -7,7 +7,11 @@
 ## System Architecture
 
 <p align="center">
-  <img src="dead-reckoning-flow.png" alt="System Flow Diagram" width="800"/>
+  <a href="dead-reckoning-flow.png">
+    <img src="dead-reckoning-flow.png" alt="System Flow Diagram" width="800"/>
+  </a>
+  <br>
+  <em>Click image to view full size</em>
 </p>
 
 ## Introduction
