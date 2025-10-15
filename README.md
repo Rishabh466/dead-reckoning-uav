@@ -1,4 +1,5 @@
-**Watch the Live Demo → [YouTube Video](https://youtu.be/pdFYwzBmNsg)**  
+**Watch the Demo - [YouTube Video](https://youtu.be/pdFYwzBmNsg)**
+**Demo on MAVProxy - [YouTube Video](https://youtu.be/UTJZK_49qyY)**
 
 
 # Dead Reckoning Navigation (GPS-Denied Return-to-Home)
